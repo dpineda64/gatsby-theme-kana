@@ -27,7 +27,6 @@ const Post = (post) => (
         </time>
       </header>
       <div
-        role="content"
         className="px-32 article__content"
         dangerouslySetInnerHTML={{ __html: post.html }}
       />

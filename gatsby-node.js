@@ -89,7 +89,7 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
     }
   `);
   if (result.errors) {
-    reporter.panic('error loading events', result.errors);
+    reporter.panic('error loading posts', result.errors);
     return;
   }
 
@@ -100,6 +100,7 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
       path: slug,
       component: require.resolve('./src/templates/post.jsx'),
       context: {
+        basePath,
         postID: post.id,
       },
     });
