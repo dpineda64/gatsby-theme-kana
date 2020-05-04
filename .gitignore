@@ -1,0 +1,34 @@
+# Logs
+logs
+*.log
+
+# Runtime data
+pids
+*.pid
+*.seed
+
+
+# Dependency directory
+# https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
+node_modules
+*.un~
+dist
+bin/published.js
+
+# Build Path of Test Fixtures
+test/**/public
+.gatsby-context.js
+.DS_Store
+public/
+node_modules/
+.cache/
+.netlify
+
+# IDE specific
+.vscode/
+
+# lock files
+yarn.lock
+package-lock.json
+# ignore any lock file other than main lock file
+!/yarn.lock

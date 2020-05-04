@@ -1,0 +1,85 @@
+:root {
+  --secondary: #121212;
+  --primary: #fbfbfb;
+  --secondaryText: #bfbfbf;
+  --textColor: #242038;
+  --primary75: rgba(36, 32, 56, 0.75);
+  --linkHover: rgba(52, 73, 102, 0.75);
+}
+
+html,
+body,
+#___gatsby,
+#gatsby-focus-wrapper {
+  @apply h-full bg-primary;
+  font-family: 'Nunito', sans-serif;
+  cursor: default;
+}
+
+.lora {
+  font-family: 'Lora', serif;
+}
+
+.layout {
+  @apply h-full;
+}
+
+article p {
+  color: #242038;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-font-smoothing: antialiased !important;
+  text-rendering: optimizelegibility !important;
+  letter-spacing: 0.03em;
+}
+
+article.card {
+  transition: all 0.5s ease;
+}
+
+article.card p {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+}
+
+*,
+::before,
+::after {
+  background-repeat: no-repeat;
+}
+
+article.card h1 span {
+  background-image: linear-gradient(to right, #6786b1 100%, #6786b1 0%);
+  background-position: 0px 100%;
+  background-size: 0px 2px;
+  transition: background-size 0.25s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0s;
+}
+
+article.card:hover h1 span {
+  background-size: 100% 2px;
+}
+
+.article--full .article__content {
+  h1 {
+    @apply text-xl font-semibold;
+  }
+  p {
+    @apply my-5;
+  }
+  ul {
+    @apply list-disc;
+  }
+  ol {
+    @apply list-decimal;
+  }
+
+  li > code {
+    @apply inline;
+    padding: 2px 4px;
+  }
+  code {
+    @apply w-full overflow-x-auto inline-block whitespace-pre-wrap;
+  }
+}
