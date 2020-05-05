@@ -29,7 +29,6 @@ export const query = graphql`
         id
         frontmatter {
           author
-          categories
           date_publish(formatString: "MMMM DD YYYY")
           image
           tags
