@@ -17,7 +17,7 @@ module.exports = {
         contentPath: 'posts', // where your md files are
         basePath: '/posts', // where this theme would be leave
         nav: [
-          // an array of [text, path] for the top navigation in the sidebar
+          // an array of objects with [text, path] for the top navigation in the sidebar
           {
             text: 'Home',
             path: '/',
