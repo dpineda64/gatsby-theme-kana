@@ -6,9 +6,6 @@ title: Example Posts
 author: '@dpineda'
 date_publish: 2020-03-22
 image: https://images.unsplash.com/photo-1588433423032-e2f28b485726?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80
-categories:
-  - devops
-  - aws
 tags:
   - docker
 ---
@@ -29,9 +26,9 @@ exports.onPreBootstrap = ({ reporter }, options) => {
   }
 };
 
-exports.onCreateNode = ({ node, actions, getNode }, options) => {
+exports.onCreateNode = ({ node, actions, getNode, reporter }, options) => {
+  const basePath = options.basePath || '/';
   if (node.internal.type === 'MarkdownRemark') {
-    const basePath = options.basePath || '/';
     const slugify = (str) => {
       const slug = str
         .toLowerCase()
@@ -49,6 +46,20 @@ exports.onCreateNode = ({ node, actions, getNode }, options) => {
       name: 'date_time',
       node,
       value: node.frontmatter.date_publish,
+    });
+  }
+
+  if (node.internal.type === 'Site') {
+    reporter.info('Site Navigation field created');
+    actions.createNodeField({
+      name: 'siteNav',
+      node,
+      value: options.nav || [],
+    });
+    actions.createNodeField({
+      name: 'basePath',
+      node,
+      value: basePath,
     });
   }
 };
@@ -73,7 +84,6 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
           id
           frontmatter {
             author
-            categories
             date_publish(formatString: "MMMM DD YYYY")
             image
             tags
