@@ -1,6 +1,6 @@
 import React from 'react';
-import Seo from './seo';
-import Sidebar from './sidebar';
+import Seo from '../Seo';
+import Sidebar from '../Sidebar';
 
 const Layout = ({ children }) => (
   <>
