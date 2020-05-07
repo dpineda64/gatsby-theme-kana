@@ -83,3 +83,22 @@ article.card:hover h1 span {
     @apply w-full overflow-x-auto inline-block whitespace-pre-wrap;
   }
 }
+
+/* Search */
+.search {
+  &__icon,
+  &__text {
+    @apply inline-block align-middle;
+  }
+}
+
+/* Links */
+.link {
+  &--social {
+    @apply capitalize;
+
+    svg {
+      @apply inline-block mr-3;
+    }
+  }
+}

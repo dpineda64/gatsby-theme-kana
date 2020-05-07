@@ -10,8 +10,8 @@ export default function useSiteMetadata() {
           image
           titleTemplate
           social {
-            github
-            twitter
+            site
+            url
           }
         }
       }
