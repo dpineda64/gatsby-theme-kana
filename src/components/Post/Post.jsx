@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import Seo from './seo';
+import Seo from '../Seo';
 
-const Post = (post) => (
+const Post = ({ post, basePath }) => (
   <>
     <Seo postData={post} />
     <article className="article--full w-full">
-      <Link to={post.basePath} className="fixed" aria-label="Go Back">
+      <Link to={basePath} className="fixed" aria-label="Go Back">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"

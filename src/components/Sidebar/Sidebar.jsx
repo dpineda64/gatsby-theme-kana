@@ -1,7 +1,7 @@
 import React from 'react';
-import IconLoader from './IconLoader';
-import useSiteMetadata from '../hooks/use-site-metadata';
-import useSiteNav from '../hooks/use-site-nav';
+import IconLoader from '../IconLoader';
+import useSiteMetadata from '../../hooks/useSiteMetadata';
+import useSiteNav from '../../hooks/useSiteNav';
 
 const Sidebar = () => {
   const siteMeta = useSiteMetadata();
