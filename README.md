@@ -10,6 +10,23 @@ there is still work needed on this theme its around ~50% completed
 
 ```js
 module.exports = {
+  siteMetadata: {
+    title: 'Kana',
+    description: 'This description is used for SEO purposes and sidebar',
+    social: [
+      {
+        site: 'twitter',
+        url: 'https://twitter.com/dpineda64',
+      },
+      {
+        site: 'github',
+        url: 'https://github.com/dpineda64',
+      },
+    ],
+    titleTemplate: '%s @ Site Test',
+    url: 'https://themes.dpineda.dev/gatsby/kana',
+    image: '/images/kana.jpg',
+  },
   plugins: [
     {
       resolve: 'gatsby=theme-kana',
